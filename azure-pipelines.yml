@@ -4,7 +4,6 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: 'gou-service-connection'
   # Web app name
   webAppName: 'gou-web-app'
   # Environment name
@@ -64,7 +63,6 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: gou-web-app'
             inputs:
-              azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
               runtimeStack: 'NODE|16-lts'
