@@ -4,11 +4,11 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: 'ach-service-connection'
+  azureSubscription: 'gou-service-connection'
   # Web app name
-  webAppName: 'ach-web-app'
+  webAppName: 'gou-web-app'
   # Environment name
-  environmentName: 'ach-web-app'
+  environmentName: 'gou-web-app'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
@@ -62,7 +62,7 @@ stages:
         deploy:
           steps:            
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: ach-web-app'
+            displayName: 'Azure Web App Deploy: gou-web-app'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
